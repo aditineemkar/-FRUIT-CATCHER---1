@@ -1,43 +1,39 @@
-<!DOCTYPE html><html lang="en"><head>
-    <script src="libraries/p5.js"></script>
-    <script src="libraries/p5.dom.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-    <script src="libraries/matter.js"></script>
-    <script src="libraries/p5.play.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+<html lang="en">
+<head>
+  <title>Simple Speed Typer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">Simple Speed Typing</div>
+    <div class="header">
+      <div class="wpm">
+        <div class="header_text">WPM</div>
+        <div class="curr_wpm">100</div>
+      </div>
+      <div class="cpm">
+        <div class="header_text">CPM</div>
+        <div class="curr_cpm">100</div>
+      </div>
+      <div class="errors">
+        <div class="header_text">Errors</div>
+        <div class="curr_errors">0</div>
+      </div>
+      <div class="timer">
+        <div class="header_text">Time</div>
+        <div class="curr_time">60s</div>
+      </div>
+      <div class="accuracy">
+        <div class="header_text">% Accuracy</div>
+        <div class="curr_accuracy">100</div>
+      </div>
+    </div>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyB1rE1-Dkt3QeIilzKntzefiU1Sbi20Mdo",
-    authDomain: "fruit-catcher-e3aab.firebaseapp.com",
-    databaseURL: "https://fruit-catcher-e3aab-default-rtdb.firebaseio.com",
-    projectId: "fruit-catcher-e3aab",
-    storageBucket: "fruit-catcher-e3aab.appspot.com",
-    messagingSenderId: "1082257968770",
-    appId: "1:1082257968770:web:68364c79c01aa58091ae9b"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
-    <!--Add Your JS files here -->
-    <script src="js/player.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/game.js"></script>
-  
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-  
-
-</body></html>
+    <div class="quote">Click on the area below to start the game.</div>
+    <textarea class="input_area" placeholder="start typing here..." oninput="processCurrentText()"
+      onfocus="startGame()"></textarea>
+    <button class="restart_btn" onclick="resetValues()">Restart</button>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
